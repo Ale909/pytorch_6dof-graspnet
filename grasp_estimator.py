@@ -10,6 +10,7 @@ import trimesh.transformations as tra
 import copy
 import os
 from utils import utils
+import ipdb
 
 
 class GraspEstimator:
