@@ -12,6 +12,8 @@ import mayavi.mlab as mlab
 from utils import utils
 from data import DataLoader
 
+import ipdb
+
 
 def make_parser():
     parser = argparse.ArgumentParser(
@@ -157,6 +159,7 @@ def main(args):
             depth = data['depth']
             image = data['image']
             K = data['intrinsics_matrix']
+            ipdb.set_trace()
             # Removing points that are farther than 1 meter or missing depth
             # values.
             #depth[depth == 0 or depth > 1] = np.nan
@@ -175,6 +178,7 @@ def main(args):
             # Smoothed pc comes from averaging the depth for 10 frames and removing
             # the pixels with jittery depth between those 10 frames.
             object_pc = data['smoothed_object_pc']
+            ipdb.set_trace()
             generated_grasps, generated_scores = estimator.generate_and_refine_grasps(
                 object_pc)
             mlab.figure(bgcolor=(1, 1, 1))
