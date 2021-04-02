@@ -380,8 +380,7 @@ def simple_draw_scene(pc,
 
         g = grasps[i]
 
-        g = np.array([[1,0,0,0.46],[0,1,0,-0.01],[0,0,1,0.23],[0,0,0,1]])
-        
+                
         is_diverse = True
         for prevg in selected_grasps_so_far:
             distance = np.linalg.norm(prevg[:3, 3] - g[:3, 3])
